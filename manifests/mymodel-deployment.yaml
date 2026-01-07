@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: mlamymodelpp-deployment
+  labels:
+    app: mymodel
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mymodel
+  template:
+    metadata:
+      labels:
+        app: mymodel
+    spec:
+      containers:
+      - name: mymodel
+        image: rabishankarsahu/mymodel:latest
+        ports:
+        - containerPort: 5000
