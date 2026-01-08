@@ -43,7 +43,7 @@ app = Flask(__name__)
 
 @app.route("/index",methods=["GET"])
 def index():
-    return "Welcome to the Loan Default API!"
+    return "Welcome to the Loan Default API! V2.0 Using Jenkins"
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -69,4 +69,5 @@ if __name__ == "__main__":
 # {
 #     "room": 2,
 #     "area": 2000
+
 # }
