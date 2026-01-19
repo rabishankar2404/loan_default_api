@@ -7,7 +7,8 @@ from flask import Flask, request, jsonify
 # ------------------------------------------------
 # Load the trained pickle model
 # ------------------------------------------------
-model_path = "loan_default_model.pkl"
+#model_path = "loan_default_model.pkl"
+model_path = 'model/model.pkl'
 with open(model_path, "rb") as file:
     model = pickle.load(file)
 
@@ -71,4 +72,5 @@ if __name__ == "__main__":
 #     "area": 2000
 
 # }
+
 
