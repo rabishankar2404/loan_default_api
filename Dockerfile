@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy in the source code
 COPY predict.py ./predict.py
-COPY loan_default_model.pkl ./loan_default_model.pkl
+COPY model/model.pkl ./model/model.pkl
 EXPOSE 5000
 
 # Setup an app user so the container doesn't run as the root user
@@ -20,3 +20,4 @@ CMD ["python", "predict.py"]
 # docker push rabishankarsahu/mymodel:latest
 # docker pull rabishankarsahu/mymodel:latest
 # docker run -p 5000:5000 rabishankarsahu/mymodel:latest
+
