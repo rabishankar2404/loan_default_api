@@ -92,7 +92,7 @@ signature = infer_signature(X_train, lr.predict(X_train))
 # Log the model
 model_info = mlflow.sklearn.log_model(
     sk_model=lr,
-    artifact_path="loan_default_prediction_model",
+    name="loan_default_prediction_model",
     signature=signature,
     registered_model_name="loan_default_prediction_model",
 )
@@ -104,4 +104,5 @@ if os.path.exists("loan_default_prediction_model"):
 mlflow.sklearn.save_model(lr, "loan_default_prediction_model")
 
 # Upload the model to S3
+
 s3_client.upload_file(local_model_path, bucket_name, model_s3_path)
